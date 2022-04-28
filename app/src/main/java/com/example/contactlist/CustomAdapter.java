@@ -5,6 +5,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -40,7 +42,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.viewname.setText(String.valueOf(username.get(position)));
         holder.viewphone.setText(String.valueOf(userphone.get(position)));
-
+        
     }
 
 
@@ -52,15 +54,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView viewname , viewphone ;
-        ImageView edit , delete ;
-        LinearLayout mainLayout ;
+        ImageButton viewedit , viewdelete ;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             viewname = itemView.findViewById(R.id.textViewName);
             viewphone = itemView.findViewById(R.id.textViewPhone);
-            edit = itemView.findViewById(R.id.imageViewEdit);
-            delete = itemView.findViewById(R.id.imageViewDelete);
+            viewedit = itemView.findViewById(R.id.editButton);
+            viewdelete = itemView.findViewById(R.id.deleteButton);
 
         }
     }
