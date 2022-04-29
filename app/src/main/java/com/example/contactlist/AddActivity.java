@@ -17,9 +17,9 @@ public class AddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
-        name = findViewById(R.id.userName);
-        phone = findViewById(R.id.phoneNumber);
-        button = findViewById(R.id.button);
+        name = findViewById(R.id.userName2);
+        phone = findViewById(R.id.phoneNumber2);
+        button = findViewById(R.id.button2);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

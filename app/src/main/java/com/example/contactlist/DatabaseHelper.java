@@ -66,6 +66,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    void deleteContact(int num){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        long result = db.delete(TABLE_NAME,  Col_id +" = " + num, null);
+        if(result == -1){
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "deleted Successfully!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
 
     Cursor readAllData(){
         String query = "SELECT * FROM " + TABLE_NAME;
