@@ -24,7 +24,6 @@ public class updateActivity extends AppCompatActivity {
                 DatabaseHelper myDB = new DatabaseHelper(updateActivity.this);
                 name = username.getText().toString().trim();
                 phone = userphone.getText().toString().trim();
-
                 myDB.updateData(id, name, phone);
             }
         });

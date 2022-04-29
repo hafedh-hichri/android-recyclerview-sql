@@ -86,7 +86,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 public void onClick(View view) {
                     Log.d("test","edited "+pos);
                     Intent intent = new Intent (context, updateActivity.class);
-                    intent.putExtra("position", pos);
+                    intent.putExtra("position", String.valueOf(pos));
                     intent.putExtra("username", String.valueOf(username.get(pos)));
                     intent.putExtra("userphone", String.valueOf(userphone.get(pos)));
 

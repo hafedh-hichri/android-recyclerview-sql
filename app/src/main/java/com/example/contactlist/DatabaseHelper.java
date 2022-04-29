@@ -86,7 +86,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(Col_name, name);
-        cv.put(Col_num, phone);
+        cv.put(Col_num, Integer.parseInt(phone));
 
         long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{position});
         if(result == -1){
