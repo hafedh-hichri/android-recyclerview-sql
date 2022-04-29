@@ -2,6 +2,7 @@ package com.example.contactlist;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -84,6 +85,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 @Override
                 public void onClick(View view) {
                     Log.d("test","edited "+pos);
+                    Intent intent = new Intent (context, updateActivity.class);
+                    intent.putExtra("position", pos);
+                    intent.putExtra("username", String.valueOf(username.get(pos)));
+                    intent.putExtra("userphone", String.valueOf(userphone.get(pos)));
+
+                    context.startActivity(intent);
                 }
             });
         }

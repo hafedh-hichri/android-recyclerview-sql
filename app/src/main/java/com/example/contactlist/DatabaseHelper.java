@@ -80,6 +80,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+
+
+    void updateData(String position, String name, String phone){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(Col_name, name);
+        cv.put(Col_num, phone);
+
+        long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{position});
+        if(result == -1){
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+
     Cursor readAllData(){
         String query = "SELECT * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
@@ -90,6 +108,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return cursor;
     }
+
+
 
 
 
